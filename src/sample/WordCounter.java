@@ -67,10 +67,6 @@ public class WordCounter {
             while (scanner.hasNext()) {
                 String word = scanner.next();
                 if (isWord(word)) {
-                    //if(n == 1) {
-                    //    countWord(word);
-                    //}
-                    //else
                     cWord(word);
                 }
             }
@@ -79,11 +75,13 @@ public class WordCounter {
     }
     public void processFile (File file) throws IOException {
         if (file.isDirectory()) {
+          // process all the files in that directory
             File[] filesInDir = file.listFiles();
             for (int i = 0; i < filesInDir.length; i++) {
                 processFile(filesInDir[i]);
             }
         } else {
+          // count the words in this file
             Scanner scanner = new Scanner(file);
             while (scanner.hasNext()) {
                 String word = scanner.next();

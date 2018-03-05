@@ -26,6 +26,7 @@ public class DataSource {
 
     public DataSource()
     {
+      // Create map for each prob
         wordCounts = new TreeMap<>();
         freqspam = new TreeMap<>();
         spamProb = new TreeMap<>();
